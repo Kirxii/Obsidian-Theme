@@ -33,6 +33,12 @@ settings:
         level: 1
         collapsed: true
     -
+        id: background
+        title: Backgrounds
+        type: heading
+        level: 2
+        collapsed: true
+    -
         id: background-primary
         title: Primary Background
         type: variable-themed-color
@@ -41,6 +47,14 @@ settings:
         default-light: '#F0F0F0'
         default-dark: '#121212'
     -
+        id: background-primary-alt
+        title: Primary Background Alternative
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
         id: background-secondary
         title: Secondary Background
         type: variable-themed-color
@@ -48,6 +62,14 @@ settings:
         opacity: false
         default-light: '#FFFFFF'
         default-dark: '#000000'
+    -
+        id: background-secondary-alt
+        title: Secondary Background Alternative
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
     -
         id: background-modifier-hover
         title: Hover Background
@@ -88,6 +110,207 @@ settings:
         opacity: true
         default-light: '#'
         default-dark: '#'
+    -
+        id: text
+        title: Text
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: text-normal
+        title: Text Color Normal
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: text-muted
+        title: Text Color Muted
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -  
+        id: text-faint
+        title: Text Color Faint
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: callout
+        title: Callout
+        description: Changing how the callouts look
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: callout-border-width
+        title: Callout Border Width
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: '1px'
+    -
+        id: callout-border-opacity
+        title: Callout Border Opacity
+        type: variable-number-slider
+        default: 10
+        min: 0
+        max: 100
+        step: 1
+        format: '%'
+    -
+        id: callout-padding
+        title: Callout Padding
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: '0px'
+    -
+        id: callout-radius
+        title: Callout Radius
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: '0px'
+    -
+        id: callout-title-size
+        title: Callout Title Size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: '1em'
+    -
+        id: callout-content-background
+        title: Callout Content Background
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: checkbox
+        title: Checkbox
+        description: Changes how the checkbox looks
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: checkbox-radius
+        title: Checkbox radius
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: '2px'
+    -
+        id: checkbox-size
+        title: Checkbox Size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: 1.2em
+    -
+        id: checklist-done-decoration
+        title: Checklist Done Decoration
+        type: variable-select
+        allowEmpty: false
+        default: line-through
+        options:
+            -
+                label: None
+                value: none
+            -
+                label: Underline
+                value: underline
+            -
+                label: Line Through
+                value: line-through
+            -  
+                label: Overline
+                value: overline
+    -
+        id: checkbox-color
+        title: Checkbox Color
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: checkbox-color-hover
+        title: Checkbox Color Hover
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: checkbox-border-color
+        title: Checkbox Border Color
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: checkbox-border-color-hover
+        title: Checkbox Border Color
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: checklist-done-color
+        title: Checklist Done Color
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: checkbox-marker-color
+        title: Checkbox Marker Color
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: codeblock
+        title: Codeblock
+        description: Changes how the codeblock looks
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: code-background
+        title: Code Backhround
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: code-white-space
+        title: Code White Space
+        type: variable-select
+        allowEmpty: false
+        default: normal
+        options:
+            -
+                label: Normal
+                value: normal
+            -
+                label: No Wrap
+                value: nowrap
+            -
+                label: Preserved
+                value: pre
+            -
+                label: Preserved Line
+                value: pre-line
+            -
+                label: Preserved Wrap
+                value: pre-wrap
     - 
         id: headings
         title: Headings
@@ -482,27 +705,82 @@ body {
     --radius-l: 0px;
     --input-radius: 15px;
     --tab-radius-active: 0px;
-    --checkbox-radius: 15px;
-    --checkbox-color: #A5D6A7;
-    --checkbox-marker-color: #1B5E20;
-    --checklist-done-color: #A5D6A7;
-    --checklist-done-decoration: none;
     --toggle-radius: 15px;
     --toggle-thumb-radius: 15px;
     --slider-thumb-radius: 15px;
     --titlebar-background-focused: black;
     --titlebar-text-weight: 400;
-    --font-ui-medium: 16px;
-    --font-ui-small: 12px;
-    --font-ui-smaller: 12px;
+    --font-ui-medium: 14px;
+    --font-ui-small: 11px;
+    --font-ui-smaller: 10px;
+    --text-error: white;
 }
 
-.vertical-tab-nav-item { 
+body:not(.native-scrollbars) ::-webkit-scrollbar {
+    background-color: transparent;
+    width: 8px;
+    height: 1px;
+}
+
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+}
+
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:hover,
+body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:active {
+    border-radius: 15px;
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+h1 svg {
+    width: calc(var(--h1-line-height) - 0.2em);
+    height: calc(var(--h1-line-height) - 0.2em);
+    vertical-align: text-top;
+}
+
+h2 svg {
+    width: calc(var(--h2-line-height) - 0.2em);
+    height: calc(var(--h2-line-height) - 0.2em);
+    vertical-align: text-top;
+}
+
+
+.vertical-tab-nav-item {
     font-size: calc(var(--font-ui-small) + 2px);
 }
 
 hr {
     border-radius: var(--hr-radius);
+}
+
+
+
+.kanban-plugin__lane {
+    background-color: var(--background-primary);
+    border-radius: var(--input-radius);
+}
+
+.kanban-plugin__item-content-wrapper,
+.kanban-plugin__item-metadata-wrapper,
+.kanban-plugin__item-title-wrapper {
+    background-color: var(--background-secondary);
+}
+
+.kanban-plugin__item-title-wrapper:not(:only-child) {
+    border: 0px;
+}
+
+.markdown-source-view.mod-cm6 .cm-embed-block:not(.cm-table-widget):hover {
+    border-radius: var(--callout-radius);
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+    white-space: var(--code-white-space);
 }
 
 .workspace-tab-header.is-active::before,
