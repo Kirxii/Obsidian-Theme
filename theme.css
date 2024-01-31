@@ -26,6 +26,113 @@ settings:
                 label: Custom
                 value: custom
     -
+        id: light
+        title: Light Mode
+        description: Colors for the light mode
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: heading-l
+        title: Headings
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: l-h1
+        title: Heading 1
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: l-h1-color
+        title: H1 Color
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
+    -
+        id: l-h1-font
+        title: H1 Font
+        description: Choose a font from your system
+        type: variable-text
+        default: ''
+    -
+        id: l-h1-size
+        title: H1 Size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: '2em'
+    -
+        id: l-h1-line-height
+        title: H1 Line Height
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: '1.34em'
+    -
+        id: l-h1-variant
+        title: H1 Variant
+        type: variable-select
+        default: normal
+        options:
+            -
+                label: Normal
+                value: normal
+            -
+                label: Small Caps
+                value: small-caps
+            -
+                label: All Small Caps
+                value: all-small-caps
+    -
+        id: l-h1-weight
+        title: H1 Weight
+        type: variable-number-slider
+        default: 600
+        min: 100
+        step: 100
+        max: 900
+    -
+        id: l-h2
+        title: Heading 2
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: l-h2-color
+        title: H2 Color
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
+    -
+        id: l-h3
+        title: Heading 3
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: l-h3-color
+        title: H3 Color
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
+    -
+        id: dark
+        title: Dark Mode
+        description: Colors for the dark mode
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: plugins
+        title: Plugins Integration
+        description: Settings for how to display plugins officially supported by MainHub
+        type: heading
+        level: 1
+        collapse: true
+    -
         id: interface
         title: Interface Settings
         description: Changing how the interface looks
@@ -140,6 +247,71 @@ settings:
         opacity: true
         default-light: '#'
         default-dark: '#'
+    -
+        id: modal
+        title: Modal
+        description: Changes how the modal looks
+        type: heading
+        level: 2
+        collapsed: true
+    -
+        id: modal-background
+        title: Modal Background
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: modal-width
+        title: Modal Width
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: modal-max-width
+        title: Modal Max Width
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: modal-height
+        title: Modal Height
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: modal-max-height
+        title: Modal Max Height
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: modal-max-width-narrow
+        title: Narrow Modal Max Width
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: modal-border-width
+        title: Modal Border Width
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: modal-border-color
+        title: Modal Border Color
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: modal-radius
+        title: Modal Radius
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
     -
         id: callout
         title: Callout
@@ -330,55 +502,6 @@ settings:
         type: heading
         level: 2
         collapsed: true
-    -
-        id: h1-color
-        title: Heading Color
-        type: variable-themed-color
-        format: hex
-        opacity: true
-        default-light: '#'
-        default-dark: '#'
-    -
-        id: h1-font
-        title: Heading Font
-        description: Choose a font from your system
-        type: variable-text
-        default: ''
-    -
-        id: h1-size
-        title: Heading Size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '2em'
-    -
-        id: h1-line-height
-        title: Heading Line Height
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '1.34em'
-    -
-        id: h1-variant
-        title: Heading Variant
-        type: variable-select
-        default: normal
-        options:
-            -
-                label: Normal
-                value: normal
-            -
-                label: Small Caps
-                value: small-caps
-            -
-                label: All Small Caps
-                value: all-small-caps
-    -
-        id: h1-weight
-        title: Heading Weight
-        type: variable-number-slider
-        default: 600
-        min: 100
-        step: 100
-        max: 900
     - 
         id: heading-2
         title: Heading 2
@@ -697,7 +820,95 @@ settings:
             -
                 label: Fancy
                 value: fancy 
+    -
+        id: tag
+        title: Tags
+        description: Changing how the tags looks
+        type: heading
+        level: 1
+        collapsed: true
+    -
+        id: tag-size
+        title: Tag Font Size
+        type: variable-text
+        description: Accepts any CSS font-size value
+        default: '0.8em'
+    -
+        id: tag-color
+        title: Tag Text Color
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: tag-color-hover
+        title: Tag Text Color Hover
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: tag-background
+        title: Tag Background Color
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: tag-background-hover
+        title: Tag Background Color Hover
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: tag-border-color
+        title: Tag Border Color
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: tag-border-color-hover
+        title: Tag Border Color Hover
+        type: variable-themed-color
+        format: hex
+        opacity: true
+        default-light: '#'
+        default-dark: '#'
+    -
+        id: tag-border-width
+        title: Tag Border Width
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: '1px'
+    -
+        id: tag-radius
+        title: Tag Radius
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: tag-weight
+        title: Tag weight
+        type: variable-text
+        default: 'bold'
+    
 */
+
+body.theme-light.css-settings-manager {
+    --h1-color: var(--l-h1-color);
+    --h2-color: var(--l-h2-color);
+    --h3-color: var(--l-h3-color);
+    --h4-color: var(--l-h4-color);
+    --h5-color: var(--l-h5-color);
+    --h6-color: var(--l-h6-color);
+} 
 
 body {
     --radius-s: 0px;
@@ -714,6 +925,70 @@ body {
     --font-ui-small: 11px;
     --font-ui-smaller: 10px;
     --text-error: white;
+    --code-editorInlayHintsFontFamily: "Lexend Deca", monospace;
+}
+
+/* Calendar */
+
+#calendar-container .today {
+    font-weight: 900;
+    color: var(--h1-color);
+}
+
+/* Custom Checkboxes */
+
+/* Scheduling */
+
+input[data-task="<"]:checked,
+li[data-task="<"]>input:checked,
+li[data-task="<"]>p>input:checked {
+    --checkbox-color: transparent;
+    --checkbox-color-hover: transparent;
+    border-width: 0;
+}
+
+input[data-task="<"]:checked::after,
+li[data-task="<"]>input:checked::after,
+li[data-task="<"]>p>input:checked::after {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 0 256 256' fill='currentColor'%3E%3Cpath fill='currentColor' d='M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24Zm56 112h-56a8 8 0 0 1-8-8V72a8 8 0 0 1 16 0v48h48a8 8 0 0 1 0 16Z'%3E%3C/path%3E%3C/svg%3E");
+    -webkit-mask-size: 120%;
+    background-color: var(--h2-color);
+}
+
+/* Reschedule */
+
+input[data-task=">"]:checked,
+li[data-task=">"]>input:checked,
+li[data-task=">"]>p>input:checked {
+    --checkbox-color: transparent;
+    --checkbox-color-hover: transparent;
+    border-width: 0;
+}
+
+input[data-task=">"]:checked::after,
+li[data-task=">"]>input:checked::after,
+li[data-task=">"]>p>input:checked::after {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 0 256 256' fill='currentColor'%3E%3Cpath fill='currentColor' d='M232 127.89a16 16 0 0 1-8.18 14L55.91 237.9A16.14 16.14 0 0 1 48 240a16 16 0 0 1-15.05-21.34l27.35-79.95a4 4 0 0 1 3.79-2.71H136a8 8 0 0 0 8-8.53a8.19 8.19 0 0 0-8.26-7.47H64.16a4 4 0 0 1-3.79-2.7l-27.44-80a16 16 0 0 1 22.92-19.23l168 95.89a16 16 0 0 1 8.15 13.93Z'%3E%3C/path%3E%3C/svg%3E");
+    -webkit-mask-size: 120%;
+    background-color: var(--h6-color);
+}
+
+/* Cancelled */
+
+input[data-task="-"]:checked,
+li[data-task="-"]>input:checked,
+li[data-task="-"]>p>input:checked {
+    --checkbox-color: transparent;
+    --checkbox-color-hover: transparent;
+    border-width: 0px;
+}
+
+input[data-task="-"]:checked::after,
+li[data-task="-"]>input:checked::after,
+li[data-task="-"]>p>input:checked::after {
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16px' height='16px' viewBox='0 0 256 256' fill='currentColor'%3E%3Cpath fill='currentColor' d='M228 128a12 12 0 0 1-12 12H40a12 12 0 0 1 0-24h176a12 12 0 0 1 12 12Z'%3E%3C/path%3E%3C/svg%3E");
+    -webkit-mask-size: 120%;
+    background-color: var(--text-faint);
 }
 
 body:not(.native-scrollbars) ::-webkit-scrollbar {
@@ -732,23 +1007,6 @@ body:not(.native-scrollbars) ::-webkit-scrollbar-thumb:active {
     background-color: white;
 }
 
-h1 {
-    text-align: center;
-}
-
-h1 svg {
-    width: calc(var(--h1-line-height) - 0.2em);
-    height: calc(var(--h1-line-height) - 0.2em);
-    vertical-align: text-top;
-}
-
-h2 svg {
-    width: calc(var(--h2-line-height) - 0.2em);
-    height: calc(var(--h2-line-height) - 0.2em);
-    vertical-align: text-top;
-}
-
-
 .vertical-tab-nav-item {
     font-size: calc(var(--font-ui-small) + 2px);
 }
@@ -757,7 +1015,17 @@ hr {
     border-radius: var(--hr-radius);
 }
 
+.metadata-properties,
+.metadata-properties *,
+.metadata-add-button,
+.metadata-properties-heading {
+    font-family: var(--font-monospace);
+}
 
+.metadata-container {
+    border-bottom: solid 2px var(--background-modifier-border);
+    margin-bottom: 1.5rem;
+}
 
 .kanban-plugin__lane {
     background-color: var(--background-primary);
@@ -791,6 +1059,8 @@ pre[class*="language-"] {
 svg * {
     stroke-linecap: square;
     stroke-linejoin: miter;
-    rx: 0;
-    ry: 0;
+}
+
+.view-lines {
+    font-family: "Lexend Deca";
 }
