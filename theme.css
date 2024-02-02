@@ -26,51 +26,78 @@ settings:
                 label: Custom
                 value: custom
     -
-        id: light
+        id: light-mode
         title: Light Mode
-        description: Colors for the light mode
+        description: Settings exclusive to the light mode
         type: heading
         level: 1
         collapsed: true
     -
-        id: heading-l
+        id: light-mode-heading
         title: Headings
         type: heading
         level: 2
         collapsed: true
     -
-        id: l-h1
+        id: light-mode-h1
         title: Heading 1
         type: heading
         level: 3
         collapsed: true
     -
-        id: l-h1-color
+        id: light-mode-h1-color
         title: H1 Color
+        description: Heading 1 color
         type: variable-color
         format: hex
         opacity: true
         default: '#'
     -
-        id: l-h1-font
-        title: H1 Font
-        description: Choose a font from your system
+        id: light-mode-h1-font
+        title: H1 Font Family
+        description: Accepts any CSS font-family value
         type: variable-text
         default: ''
     -
-        id: l-h1-size
-        title: H1 Size
+        id: light-mode-h1-size
+        title: H1 Font Size
         description: Accepts any CSS font-size value
         type: variable-text
-        default: '2em'
+        default: ''
     -
-        id: l-h1-line-height
+        id: light-mode-h1-line-height
         title: H1 Line Height
         description: Accepts any CSS font-size value
         type: variable-text
-        default: '1.34em'
+        default: ''
     -
-        id: l-h1-variant
+        id: light-mode-h1-alignment
+        title: H1 Alignment
+        type: variable-select
+        default: left
+        options:
+            -
+                label: Left Alignment
+                value: left
+            -
+                label: Center Alignment
+                value: center
+            -
+                label: Right Alignment
+                value: right
+            -
+                label: Justify Alignment
+                value: justify
+    -
+        id: light-mode-h1-weight
+        title: H1 Font Weight
+        type: variable-number-slider
+        default: 800
+        min: 50
+        step: 50
+        max: 900
+    -
+        id: light-mode-h1-variant
         title: H1 Variant
         type: variable-select
         default: normal
@@ -85,43 +112,710 @@ settings:
                 label: All Small Caps
                 value: all-small-caps
     -
-        id: l-h1-weight
-        title: H1 Weight
-        type: variable-number-slider
-        default: 600
-        min: 100
-        step: 100
-        max: 900
+        id: light-mode-h1-color-hover
+        title: H1 Hover Color
+        description: Heading 1 color when hovered
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
     -
-        id: l-h2
+        id: light-mode-h1-hover-effect
+        title: H1 Hover Effect
+        type: class-select
+        default: font-size 
+        options:
+            -
+                label: None
+                value: ''
+            -
+                label: Font Size
+                value: light-mode-h1-hover-font-size
+    -
+        id: light-mode-h1-hover-timing-function
+        title: H1 Hover Timing Function
+        type: variable-select
+        default: ease-in-out
+        options:
+            -  
+                label: None
+                value: none
+            -
+                label: Linear
+                value: linear
+            -
+                label: Ease
+                value: ease
+            -
+                label: Ease In
+                value: ease-in
+            -
+                label: Ease Out
+                value: ease-out
+            -
+                label: Ease In Out
+                value: ease-in-out
+    -
+        id: light-mode-h1-hover-duration
+        title: H1 Hover Duration
+        type: variable-number
+        default: 0.25
+        format: s
+    -
+        id: light-mode-h1-hover-delay
+        title: H1 Hover Delay
+        type: variable-number
+        default: 0
+        format: s
+    -
+        id: light-mode-h2
         title: Heading 2
         type: heading
         level: 3
         collapsed: true
     -
-        id: l-h2-color
+        id: light-mode-h2-color
         title: H2 Color
+        description: Heading 2 color
         type: variable-color
         format: hex
         opacity: true
         default: '#'
     -
-        id: l-h3
+        id: light-mode-h2-font
+        title: H2 Font Family
+        description: Accepts any CSS font-family value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h2-size
+        title: H2 Font Size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h2-line-height
+        title: H2 Line Height
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h2-alignment
+        title: H2 Alignment
+        type: variable-select
+        default: left
+        options:
+            -
+                label: Left Alignment
+                value: left
+            -
+                label: Center Alignment
+                value: center
+            -
+                label: Right Alignment
+                value: right
+            -
+                label: Justify Alignment
+                value: justify
+    -
+        id: light-mode-h2-weight
+        title: H2 Font Weight
+        type: variable-number-slider
+        default: 800
+        min: 50
+        step: 50
+        max: 900
+    -
+        id: light-mode-h2-variant
+        title: H2 Variant
+        type: variable-select
+        default: normal
+        options:
+            -
+                label: Normal
+                value: normal
+            -
+                label: Small Caps
+                value: small-caps
+            -
+                label: All Small Caps
+                value: all-small-caps
+    -
+        id: light-mode-h2-color-hover
+        title: H2 Hover Color
+        description: Heading 2 color when hovered
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
+    -
+        id: light-mode-h2-hover-effect
+        title: H2 Hover Effect
+        type: class-select
+        default: font-size 
+        options:
+            -
+                label: None
+                value: ''
+            -
+                label: Font Size
+                value: light-mode-h2-hover-font-size
+    -
+        id: light-mode-h2-hover-timing-function
+        title: H2 Hover Timing Function
+        type: variable-select
+        default: ease-in-out
+        options:
+            -  
+                label: None
+                value: none
+            -
+                label: Linear
+                value: linear
+            -
+                label: Ease
+                value: ease
+            -
+                label: Ease In
+                value: ease-in
+            -
+                label: Ease Out
+                value: ease-out
+            -
+                label: Ease In Out
+                value: ease-in-out
+    -
+        id: light-mode-h2-hover-duration
+        title: H2 Hover Duration
+        type: variable-number
+        default: 0.25
+        format: s
+    -
+        id: light-mode-h2-hover-delay
+        title: H2 Hover Delay
+        type: variable-number
+        default: 0
+        format: s
+    -
+        id: light-mode-h3
         title: Heading 3
         type: heading
         level: 3
         collapsed: true
     -
-        id: l-h3-color
+        id: light-mode-h3-color
         title: H3 Color
+        description: Heading 3 color
         type: variable-color
         format: hex
         opacity: true
         default: '#'
     -
+        id: light-mode-h3-font
+        title: H3 Font Family
+        description: Accepts any CSS font-family value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h3-size
+        title: H3 Font Size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h3-line-height
+        title: H3 Line Height
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h3-alignment
+        title: H3 Alignment
+        type: variable-select
+        default: left
+        options:
+            -
+                label: Left Alignment
+                value: left
+            -
+                label: Center Alignment
+                value: center
+            -
+                label: Right Alignment
+                value: right
+            -
+                label: Justify Alignment
+                value: justify
+    -
+        id: light-mode-h3-weight
+        title: H3 Font Weight
+        type: variable-number-slider
+        default: 800
+        min: 50
+        step: 50
+        max: 900
+    -
+        id: light-mode-h3-variant
+        title: H3 Variant
+        type: variable-select
+        default: normal
+        options:
+            -
+                label: Normal
+                value: normal
+            -
+                label: Small Caps
+                value: small-caps
+            -
+                label: All Small Caps
+                value: all-small-caps
+    -
+        id: light-mode-h3-color-hover
+        title: H3 Hover Color
+        description: Heading 3 color when hovered
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
+    -
+        id: light-mode-h3-hover-effect
+        title: H3 Hover Effect
+        type: class-select
+        default: font-size 
+        options:
+            -
+                label: None
+                value: ''
+            -
+                label: Font Size
+                value: light-mode-h3-hover-font-size
+    -
+        id: light-mode-h3-hover-timing-function
+        title: H3 Hover Timing Function
+        type: variable-select
+        default: ease-in-out
+        options:
+            -  
+                label: None
+                value: none
+            -
+                label: Linear
+                value: linear
+            -
+                label: Ease
+                value: ease
+            -
+                label: Ease In
+                value: ease-in
+            -
+                label: Ease Out
+                value: ease-out
+            -
+                label: Ease In Out
+                value: ease-in-out
+    -
+        id: light-mode-h3-hover-duration
+        title: H3 Hover Duration
+        type: variable-number
+        default: 0.25
+        format: s
+    -
+        id: light-mode-h3-hover-delay
+        title: H3 Hover Delay
+        type: variable-number
+        default: 0
+        format: s
+    -
+        id: light-mode-h4
+        title: Heading 4
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: light-mode-h4-color
+        title: H4 Color
+        description: Heading 4 color
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
+    -
+        id: light-mode-h4-font
+        title: H4 Font Family
+        description: Accepts any CSS font-family value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h4-size
+        title: H4 Font Size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h4-line-height
+        title: H4 Line Height
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h4-alignment
+        title: H4 Alignment
+        type: variable-select
+        default: left
+        options:
+            -
+                label: Left Alignment
+                value: left
+            -
+                label: Center Alignment
+                value: center
+            -
+                label: Right Alignment
+                value: right
+            -
+                label: Justify Alignment
+                value: justify
+    -
+        id: light-mode-h4-weight
+        title: H4 Font Weight
+        type: variable-number-slider
+        default: 800
+        min: 50
+        step: 50
+        max: 900
+    -
+        id: light-mode-h4-variant
+        title: H4 Variant
+        type: variable-select
+        default: normal
+        options:
+            -
+                label: Normal
+                value: normal
+            -
+                label: Small Caps
+                value: small-caps
+            -
+                label: All Small Caps
+                value: all-small-caps
+    -
+        id: light-mode-h4-color-hover
+        title: H4 Hover Color
+        description: Heading 4 color when hovered
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
+    -
+        id: light-mode-h4-hover-effect
+        title: H4 Hover Effect
+        type: class-select
+        default: font-size 
+        options:
+            -
+                label: None
+                value: ''
+            -
+                label: Font Size
+                value: light-mode-h4-hover-font-size
+    -
+        id: light-mode-h4-hover-timing-function
+        title: H4 Hover Timing Function
+        type: variable-select
+        default: ease-in-out
+        options:
+            -  
+                label: None
+                value: none
+            -
+                label: Linear
+                value: linear
+            -
+                label: Ease
+                value: ease
+            -
+                label: Ease In
+                value: ease-in
+            -
+                label: Ease Out
+                value: ease-out
+            -
+                label: Ease In Out
+                value: ease-in-out
+    -
+        id: light-mode-h4-hover-duration
+        title: H4 Hover Duration
+        type: variable-number
+        default: 0.25
+        format: s
+    -
+        id: light-mode-h4-hover-delay
+        title: H4 Hover Delay
+        type: variable-number
+        default: 0
+        format: s
+    -
+        id: light-mode-h5
+        title: Heading 5
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: light-mode-h5-color
+        title: H5 Color
+        description: Heading 5 color
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
+    -
+        id: light-mode-h5-font
+        title: H5 Font Family
+        description: Accepts any CSS font-family value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h5-size
+        title: H5 Font Size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h5-line-height
+        title: H5 Line Height
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h5-alignment
+        title: H5 Alignment
+        type: variable-select
+        default: left
+        options:
+            -
+                label: Left Alignment
+                value: left
+            -
+                label: Center Alignment
+                value: center
+            -
+                label: Right Alignment
+                value: right
+            -
+                label: Justify Alignment
+                value: justify
+    -
+        id: light-mode-h5-weight
+        title: H5 Font Weight
+        type: variable-number-slider
+        default: 800
+        min: 50
+        step: 50
+        max: 900
+    -
+        id: light-mode-h5-variant
+        title: H5 Variant
+        type: variable-select
+        default: normal
+        options:
+            -
+                label: Normal
+                value: normal
+            -
+                label: Small Caps
+                value: small-caps
+            -
+                label: All Small Caps
+                value: all-small-caps
+    -
+        id: light-mode-h5-color-hover
+        title: H5 Hover Color
+        description: Heading 5 color when hovered
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
+    -
+        id: light-mode-h5-hover-effect
+        title: H5 Hover Effect
+        type: class-select
+        default: font-size 
+        options:
+            -
+                label: None
+                value: ''
+            -
+                label: Font Size
+                value: light-mode-h5-hover-font-size
+    -
+        id: light-mode-h5-hover-timing-function
+        title: H5 Hover Timing Function
+        type: variable-select
+        default: ease-in-out
+        options:
+            -  
+                label: None
+                value: none
+            -
+                label: Linear
+                value: linear
+            -
+                label: Ease
+                value: ease
+            -
+                label: Ease In
+                value: ease-in
+            -
+                label: Ease Out
+                value: ease-out
+            -
+                label: Ease In Out
+                value: ease-in-out
+    -
+        id: light-mode-h5-hover-duration
+        title: H5 Hover Duration
+        type: variable-number
+        default: 0.25
+        format: s
+    -
+        id: light-mode-h5-hover-delay
+        title: H5 Hover Delay
+        type: variable-number
+        default: 0
+        format: s
+    -
+        id: light-mode-h6
+        title: Heading 6
+        type: heading
+        level: 3
+        collapsed: true
+    -
+        id: light-mode-h6-color
+        title: H6 Color
+        description: Heading 6 color
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
+    -
+        id: light-mode-h6-font
+        title: H6 Font Family
+        description: Accepts any CSS font-family value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h6-size
+        title: H6 Font Size
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h6-line-height
+        title: H6 Line Height
+        description: Accepts any CSS font-size value
+        type: variable-text
+        default: ''
+    -
+        id: light-mode-h6-alignment
+        title: H6 Alignment
+        type: variable-select
+        default: left
+        options:
+            -
+                label: Left Alignment
+                value: left
+            -
+                label: Center Alignment
+                value: center
+            -
+                label: Right Alignment
+                value: right
+            -
+                label: Justify Alignment
+                value: justify
+    -
+        id: light-mode-h6-weight
+        title: H6 Font Weight
+        type: variable-number-slider
+        default: 800
+        min: 50
+        step: 50
+        max: 900
+    -
+        id: light-mode-h6-variant
+        title: H6 Variant
+        type: variable-select
+        default: normal
+        options:
+            -
+                label: Normal
+                value: normal
+            -
+                label: Small Caps
+                value: small-caps
+            -
+                label: All Small Caps
+                value: all-small-caps
+    -
+        id: light-mode-h6-color-hover
+        title: H6 Hover Color
+        description: Heading 6 color when hovered
+        type: variable-color
+        format: hex
+        opacity: true
+        default: '#'
+    -
+        id: light-mode-h6-hover-effect
+        title: H6 Hover Effect
+        type: class-select
+        default: font-size 
+        options:
+            -
+                label: None
+                value: ''
+            -
+                label: Font Size
+                value: light-mode-h6-hover-font-size
+    -
+        id: light-mode-h6-hover-timing-function
+        title: H6 Hover Timing Function
+        type: variable-select
+        default: ease-in-out
+        options:
+            -  
+                label: None
+                value: none
+            -
+                label: Linear
+                value: linear
+            -
+                label: Ease
+                value: ease
+            -
+                label: Ease In
+                value: ease-in
+            -
+                label: Ease Out
+                value: ease-out
+            -
+                label: Ease In Out
+                value: ease-in-out
+    -
+        id: light-mode-h6-hover-duration
+        title: H6 Hover Duration
+        type: variable-number
+        default: 0.25
+        format: s
+    -
+        id: light-mode-h6-hover-delay
+        title: H6 Hover Delay
+        type: variable-number
+        default: 0
+        format: s
+    -
         id: dark
         title: Dark Mode
-        description: Colors for the dark mode
+        description: Settings exclusive to the dark mode
         type: heading
         level: 1
         collapsed: true
@@ -483,303 +1177,6 @@ settings:
             -
                 label: Preserved Wrap
                 value: pre-wrap
-    - 
-        id: headings
-        title: Headings
-        description: Changing how the headings look
-        type: heading
-        level: 1
-        collapsed: true
-    -
-        id: colorful-headings
-        title: Colorful Headings
-        description: Turn this on only if you're using the built-in presets for colorful headings
-        type: class-toggle
-        default: false
-    - 
-        id: heading-1
-        title: Heading 1
-        type: heading
-        level: 2
-        collapsed: true
-    - 
-        id: heading-2
-        title: Heading 2
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: h2-color
-        title: Heading Color
-        type: variable-themed-color
-        format: hex
-        opacity: true
-        default-light: '#'
-        default-dark: '#'
-    -
-        id: h2-font
-        title: Heading Font
-        description: Choose a font from your system
-        type: variable-text
-        default: ''
-    -
-        id: h2-size
-        title: Heading Size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '1.5em'
-    -
-        id: h2-line-height
-        title: Heading Line Height
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '1.66em'
-    -
-        id: h2-variant
-        title: Heading Variant
-        type: variable-select
-        default: normal
-        options:
-            -
-                label: Normal
-                value: normal
-            -
-                label: Small Caps
-                value: small-caps
-            -
-                label: All Small Caps
-                value: all-small-caps
-    -
-        id: h2-weight
-        title: Heading Weight
-        type: variable-number-slider
-        default: 600
-        min: 100
-        step: 100
-        max: 900
-    -
-        id: heading-3
-        title: Heading 3
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: h3-color
-        title: Heading Color
-        type: variable-themed-color
-        format: hex
-        opacity: true
-        default-light: '#'
-        default-dark: '#'
-    -
-        id: h3-font
-        title: Heading Font
-        description: Choose a font from your system
-        type: variable-text
-        default: ''
-    -
-        id: h3-size
-        title: Heading Size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '1.17em'
-    -
-        id: h3-line-height
-        title: Heading Line Height
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '2em'
-    -
-        id: h3-variant
-        title: Heading Variant
-        type: variable-select
-        default: normal
-        options:
-            -
-                label: Normal
-                value: normal
-            -
-                label: Small Caps
-                value: small-caps
-            -
-                label: All Small Caps
-                value: all-small-caps
-    -
-        id: h3-weight
-        title: Heading Weight
-        type: variable-number-slider
-        default: 600
-        min: 100
-        step: 100
-        max: 900
-    - 
-        id: heading-4
-        title: Heading 4
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: h4-color
-        title: Heading Color
-        type: variable-themed-color
-        format: hex
-        opacity: true
-        default-light: '#'
-        default-dark: '#'
-    -
-        id: h4-font
-        title: Heading Font
-        description: Choose a font from your system
-        type: variable-text
-        default: ''
-    -
-        id: h4-size
-        title: Heading Size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '1em'
-    -
-        id: h4-line-height
-        title: Heading Line Height
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '2.66em'
-    -
-        id: h4-variant
-        title: Heading Variant
-        type: variable-select
-        default: normal
-        options:
-            -
-                label: Normal
-                value: normal
-            -
-                label: Small Caps
-                value: small-caps
-            -
-                label: All Small Caps
-                value: all-small-caps
-    -
-        id: h4-weight
-        title: Heading Weight
-        type: variable-number-slider
-        default: 600
-        min: 100
-        step: 100
-        max: 900
-    
-    - 
-        id: heading-5
-        title: Heading 5
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: h5-color
-        title: Color
-        type: variable-themed-color
-        format: hex
-        opacity: true
-        default-light: '#'
-        default-dark: '#'
-    -
-        id: h5-font
-        title: Heading Font
-        description: Choose a font from your system
-        type: variable-text
-        default: ''
-    -
-        id: h5-size
-        title: Heading Size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '0.83em'
-    -
-        id: h5-line-height
-        title: Heading Line Height
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '3.34em'
-    -
-        id: h5-variant
-        title: Variant
-        type: variable-select
-        default: normal
-        options:
-            -
-                label: Normal
-                value: normal
-            -
-                label: Small Caps
-                value: small-caps
-            -
-                label: All Small Caps
-                value: all-small-caps
-    -
-        id: h5-weight
-        title: Weight
-        description: Font weight for Heading
-        type: variable-number-slider
-        default: 600
-        min: 100
-        step: 100
-        max: 900
-    - 
-        id: heading-6
-        title: Heading 6
-        type: heading
-        level: 2
-        collapsed: true
-    -
-        id: h6-color
-        title: Color
-        type: variable-themed-color
-        format: hex
-        opacity: true
-        default-light: '#'
-        default-dark: '#'
-    -
-        id: h6-font
-        title: Heading Font
-        description: Choose a font from your system
-        type: variable-text
-        default: ''
-    -
-        id: h6-size
-        title: Heading Size
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '0.67em'
-    -
-        id: h6-line-height
-        title: Heading Line Height
-        description: Accepts any CSS font-size value
-        type: variable-text
-        default: '4.66em'
-    -
-        id: h6-variant
-        title: Variant
-        type: variable-select
-        default: normal
-        options:
-            -
-                label: Normal
-                value: normal
-            -
-                label: Small Caps
-                value: small-caps
-            -
-                label: All Small Caps
-                value: all-small-caps
-    -
-        id: h6-weight
-        title: Weight
-        description: Font weight for Heading
-        type: variable-number-slider
-        default: 600
-        min: 100
-        step: 100
-        max: 900
     -
         id: horizontal-rule
         title: Horizontal Line
@@ -901,14 +1298,31 @@ settings:
     
 */
 
-body.theme-light.css-settings-manager {
-    --h1-color: var(--l-h1-color);
-    --h2-color: var(--l-h2-color);
-    --h3-color: var(--l-h3-color);
-    --h4-color: var(--l-h4-color);
-    --h5-color: var(--l-h5-color);
-    --h6-color: var(--l-h6-color);
-} 
+body h2 {
+    text-align: var(--h2-align);
+}
+
+body h3 {
+    text-align: var(--h3-align);
+}
+
+body h5 {
+    text-align: var(--h5-align);
+}
+
+body h5 {
+    text-align: var(--h5-align);
+}
+
+body h6 {
+    text-align: var(--h6-align);
+}
+
+input[type="text"],
+input.slider,
+select.dropdown {
+    width: 210px;
+}
 
 body {
     --radius-s: 0px;
@@ -926,6 +1340,99 @@ body {
     --font-ui-smaller: 10px;
     --text-error: white;
     --code-editorInlayHintsFontFamily: "Lexend Deca", monospace;
+}
+
+body.theme-light.css-settings-manager {
+    --h1-color: var(--light-mode-h1-color);
+    --h1-font: var(--light-mode-h1-font), var(--font-text);
+    --h1-weight: var(--light-mode-h1-weight);
+    --h1-line-height: var(--light-mode-h1-line-height);
+    --h1-size: var(--light-mode-h1-size);
+    --h2-color: var(--light-mode-h2-color);
+    --h3-color: var(--light-mode-h3-color);
+    --h4-color: var(--light-mode-h4-color);
+    --h5-color: var(--light-mode-h5-color);
+    --h6-color: var(--light-mode-h6-color);
+}
+
+/* Headings */
+
+.theme-light h1 {
+    text-align: var(--light-mode-h1-alignment);
+    transition: color var(--light-mode-h1-hover-duration) var(--light-mode-h1-hover-timing-function) var(--light-mode-h1-hover-delay), font-size var(--light-mode-h1-hover-duration) var(--light-mode-h1-hover-timing-function) var(--light-mode-h1-hover-delay);
+}
+
+.theme-light h1:hover {
+    color: var(--light-mode-h1-color-hover);
+}
+
+.light-mode-h1-hover-font-size h1:hover {
+    font-size: 2.2em;
+}
+
+.theme-light h2 {
+    text-align: var(--light-mode-h2-alignment);
+    transition: color var(--light-mode-h2-hover-duration) var(--light-mode-h2-hover-timing-function) var(--light-mode-h2-hover-delay), font-size var(--light-mode-h2-hover-duration) var(--light-mode-h2-hover-timing-function) var(--light-mode-h2-hover-delay);
+}
+
+.theme-light h2:hover {
+    color: var(--light-mode-h2-color-hover);
+}
+
+.light-mode-h2-hover-font-size h2:hover {
+    font-size: 2.2em;
+}
+
+.theme-light h3 {
+    text-align: var(--light-mode-h3-alignment);
+    transition: color var(--light-mode-h3-hover-duration) var(--light-mode-h3-hover-timing-function) var(--light-mode-h3-hover-delay), font-size var(--light-mode-h3-hover-duration) var(--light-mode-h3-hover-timing-function) var(--light-mode-h3-hover-delay);
+}
+
+.theme-light h3:hover {
+    color: var(--light-mode-h3-color-hover);
+}
+
+.light-mode-h3-hover-font-size h3:hover {
+    font-size: 2.2em;
+}
+
+.theme-light h4 {
+    text-align: var(--light-mode-h4-alignment);
+    transition: color var(--light-mode-h4-hover-duration) var(--light-mode-h4-hover-timing-function) var(--light-mode-h4-hover-delay), font-size var(--light-mode-h4-hover-duration) var(--light-mode-h4-hover-timing-function) var(--light-mode-h4-hover-delay);
+}
+
+.theme-light h4:hover {
+    color: var(--light-mode-h4-color-hover);
+}
+
+.light-mode-h4-hover-font-size h4:hover {
+    font-size: 2.2em;
+}
+
+.theme-light h5 {
+    text-align: var(--light-mode-h5-alignment);
+    transition: color var(--light-mode-h5-hover-duration) var(--light-mode-h5-hover-timing-function) var(--light-mode-h5-hover-delay), font-size var(--light-mode-h5-hover-duration) var(--light-mode-h5-hover-timing-function) var(--light-mode-h5-hover-delay);
+}
+
+.theme-light h5:hover {
+    color: var(--light-mode-h5-color-hover);
+}
+
+.light-mode-h5-hover-font-size h5:hover {
+    font-size: 2.2em;
+}
+
+.theme-light h6 {
+    text-align: var(--light-mode-h6-alignment);
+    transition: color var(--light-mode-h6-hover-duration) var(--light-mode-h6-hover-timing-function) var(--light-mode-h6-hover-delay), font-size var(--light-mode-h6-hover-duration) var(--light-mode-h6-hover-timing-function) var(--light-mode-h6-hover-delay);
+}
+
+.theme-light h6:hover {
+    color: var(--light-mode-h6-color-hover);
+}
+
+.light-mode-h6-hover-font-size h6:hover {
+    font-size: 2.2em;
 }
 
 /* Calendar */
