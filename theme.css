@@ -2,10 +2,12 @@
 name: Power
 id: user-power
 settings:
-    - 
+	- 
         id: user-appearance
         title: Appearance
-		description: Change how the theme looks
+		description: |-
+			Change how the native ObsidianMD looks
+			(Plugins and Snippets dependant on the native colors will still be affected)
         type: heading
         level: 1
 		collapsed: true
@@ -22,16 +24,47 @@ settings:
 			-
 				label: Catppuccin
 				value: power-catppuccin
+			-
+				label: Rose Pine
+				value: power-rose-pine
+			-
+				label: Tokyo Night
+				value: power-tokyo-night
 	-
-		id: user-flavor
+		id: user-catppuccin-flavor
 		title: Flavor
 		type: class-select
 		allowEmpty: false
 		default: mocha
 		options:
 			-
+				label: Latte
+				value: latte
+			-
+				label: Frappé
+				value: frappe
+			-
+				label: Macchiato
+				value: macchiato
+			-
 				label: Mocha
 				value: mocha
+	-
+		id: user-rose-pine-variant
+		title: Variants
+		type: class-select
+		allowEmpty: false
+		default: main
+		options:
+			-
+				label: Main
+				value: main
+			-
+				label: Dawn
+				value: dawn
+			-
+				label: Moon
+				value: moon
 	-
 		id: user-color
 		title: Color
@@ -180,6 +213,57 @@ settings:
 		opacity: true
 		default-light: "#"
 		default-dark: "#"
+	-
+		id: user-headings
+		title: Headings
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: user-headings-tip
+		title: Info
+		description: To be able to change the color of the heading, turn on "Custom Colors"
+		type: info-text
+	-	
+		id: user-headings-custom-color
+		title: Custom Colors
+		type: class-toggle
+	-
+		id: user-heading-1
+		title: Heading 1
+		type: heading
+		level: 3
+		collapsed: true
+	-
+		id: user-heading-2
+		title: Heading 2
+		type: heading
+		level: 3
+		collapsed: true
+	-
+		id: user-heading-3
+		title: Heading 3
+		type: heading
+		level: 3
+		collapsed: true
+	-
+		id: user-heading-4
+		title: Heading 4
+		type: heading
+		level: 3
+		collapsed: true
+	-
+		id: user-heading-5
+		title: Heading 5
+		type: heading
+		level: 3
+		collapsed: true
+	-
+		id: user-heading-6
+		title: Heading 6
+		type: heading
+		level: 3
+		collapsed: true
 	-
 		id: user-text
 		title: Text
@@ -542,14 +626,9 @@ body {
 	background: var(--background-primary);
 }
 
-.setting-item-description > div {
+.style-settings-container .setting-item-description > div {
 	display: none;
 }
-
-/* .themed-color-wrapper {
-	display: flex;
-	flex-direction: row;
-} */
 
 .style-settings-container > *,
 .style-settings-heading > * {
