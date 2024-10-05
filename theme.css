@@ -12,129 +12,107 @@ settings:
         level: 1
 		collapsed: true
 	-
-		id: user-colorscheme
-		title: Colorscheme
-		type: class-select
-		allowEmpty: false
-		default: power-catppuccin
-		options:
-			-
-				label: Native
-				value: power-native
-			-
-				label: Catppuccin
-				value: power-catppuccin
-			-
-				label: Rose Pine
-				value: power-rose-pine
-			-
-				label: Tokyo Night
-				value: power-tokyo-night
-	-
-		id: user-catppuccin-flavor
-		title: Flavor
-		type: class-select
-		allowEmpty: false
-		default: mocha
-		options:
-			-
-				label: Latte
-				value: latte
-			-
-				label: Frappé
-				value: frappe
-			-
-				label: Macchiato
-				value: macchiato
-			-
-				label: Mocha
-				value: mocha
-	-
-		id: user-rose-pine-variant
-		title: Variants
-		type: class-select
-		allowEmpty: false
-		default: main
-		options:
-			-
-				label: Main
-				value: main
-			-
-				label: Dawn
-				value: dawn
-			-
-				label: Moon
-				value: moon
-	-
 		id: user-color
 		title: Color
 		type: heading
 		level: 2
 		collapsed: true
 	-
-		id: user-red
+		id: color-red
 		title: Red
 		type: variable-themed-color
 		format: hex
 		opacity: false
 		default-light: "#"
 		default-dark: "#"
+		alt-format:
+			-
+				id: color-red-rgb
+				format: rgb-values
 	-
-		id: user-orange
+		id: color-orange
 		title: Orange
 		type: variable-themed-color
 		format: hex
 		opacity: false
 		default-light: "#"
 		default-dark: "#"
+		alt-format:
+			-
+				id: color-orange-rgb
+				format: rgb-values
 	-
-		id: user-yellow
+		id: color-yellow
 		title: Yellow
 		type: variable-themed-color
 		format: hex
 		opacity: false
 		default-light: "#"
 		default-dark: "#"
+		alt-format:
+			-
+				id: color-yellow-rgb
+				format: rgb-values
 	-
-		id: user-green
+		id: color-green
 		title: Green
 		type: variable-themed-color
 		format: hex
 		opacity: false
 		default-light: "#"
 		default-dark: "#"
+		alt-format:
+			-
+				id: color-green-rgb
+				format: rgb-values
 	-
-		id: user-cyan
+		id: color-cyan
 		title: Cyan
 		type: variable-themed-color
 		format: hex
 		opacity: false
 		default-light: "#"
 		default-dark: "#"
+		alt-format:
+			-
+				id: color-cyan-rgb
+				format: rgb-values
 	-
-		id: user-blue
+		id: color-blue
 		title: Blue
 		type: variable-themed-color
 		format: hex
 		opacity: false
 		default-light: "#"
 		default-dark: "#"
+		alt-format:
+			-
+				id: color-blue-rgb
+				format: rgb-values
 	-
-		id: user-purple
+		id: color-purple
 		title: Purple
 		type: variable-themed-color
 		format: hex
 		opacity: false
 		default-light: "#"
 		default-dark: "#"
+		alt-format:
+			-
+				id: color-purple-rgb
+				format: rgb-values
 	-
-		id: user-pink
+		id: color-pink
 		title: Pink
 		type: variable-themed-color
 		format: hex
 		opacity: false
 		default-light: "#"
 		default-dark: "#"
+		alt-format:
+			-
+				id: color-pin-rgb
+				format: rgb-values
 	-
 		id: user-background
 		title: Background
@@ -142,7 +120,7 @@ settings:
 		level: 2
 		collapsed: true
 	-
-		id: user-background-primary
+		id: background-primary
 		title: Primary Background
 		type: variable-themed-color
 		format: hex
@@ -150,7 +128,7 @@ settings:
 		default-light: "#"
 		default-dark: "#"
 	-
-		id: user-background-primary-alt
+		id: background-primary-alt
 		title: On Primary Background
 		description: The background color for objects with a background different from and on top of the primary background
 		type: variable-themed-color
@@ -159,7 +137,7 @@ settings:
 		default-light: "#"
 		default-dark: "#"
 	-
-		id: user-background-secondary
+		id: background-secondary
 		title: Secondary Background
 		type: variable-themed-color
 		format: hex
@@ -167,7 +145,7 @@ settings:
 		default-light: "#"
 		default-dark: "#"
 	-
-		id: user-background-secondary-alt
+		id: background-secondary-alt
 		title: On Secondary Background
 		description: The background color for objects with a background different from and on top of the primary background
 		type: variable-themed-color
@@ -176,21 +154,21 @@ settings:
 		default-light: "#"
 		default-dark: "#"
 	-
-		id: user-background-modifier-hover
+		id: background-modifier-hover
 		title: Hover Background
 		type: variable-themed-color
 		format: hex
 		default-light: "#"
 		default-dark: "#"
 	-
-		id: user-background-modifier-active-hover
+		id: background-modifier-active-hover
 		title: Active Hover Background
 		type: variable-themed-color
 		format: hex
 		default-light: "#"
 		default-dark: "#"
 	-
-		id: user-background-modifier-border
+		id: background-modifier-border
 		title: Border Color
 		type: variable-themed-color
 		format: hex
@@ -198,7 +176,7 @@ settings:
 		default-light: "#"
 		default-dark: "#"
 	-
-		id: user-background-modifier-border-hover
+		id: background-modifier-border-hover
 		title: Border Hover Color
 		type: variable-themed-color
 		format: hex
@@ -206,8 +184,16 @@ settings:
 		default-light: "#"
 		default-dark: "#"
 	-
-		id: user-background-modifier-border-focus
+		id: background-modifier-border-focus
 		title: Border Focus Color
+		type: variable-themed-color
+		format: hex
+		opacity: true
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: background-modifier-form-field
+		title: Form Field Color
 		type: variable-themed-color
 		format: hex
 		opacity: true
@@ -234,6 +220,158 @@ settings:
 		type: heading
 		level: 3
 		collapsed: true
+	-
+		id: h1-basic-settings-info
+		description: "Basic settings"
+		type: info-text
+		markdown: true
+	-
+		id: h1-font
+		title: H1 Font
+		description: Font(s) to use that is on your system
+		type: variable-text
+		default: ""
+	-
+		id: h1-size
+		title: H1 Size
+		description: Accepts CSS font-size value
+		type: variable-text
+		default: 1.5em
+	-
+		id: h1-weight
+		title: H1 Weight
+		description: "100: Thin - 900: Black"
+		type: variable-number-slider
+		default: 600
+		min: 100
+		max: 900
+		step: 100
+	-
+		id: h1-style
+		title: H1 Style
+		type: variable-select
+		allowEmpty: false
+		default: normal
+		options:
+			-
+				label: Normal
+				value: normal
+			-
+				label: Italic
+				value: italic
+	-
+		id: h1-color
+		title: H1 Color
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+		alt-format:
+			-
+				id: h1-color-rgb
+				format: rgb-values
+	-
+		id: h1-variant
+		title: H1 Variant
+		type: variable-select
+		allowEmpty: false
+		default: normal
+		options:
+			-
+				label: Normal
+				value: normal
+			-
+				label: Small caps
+				value: small-caps
+			-
+				label: All small caps
+				value: all-small-caps
+	-
+		id: h1-advanced-settings-info
+		description: "Advanced settings"
+		type: info-text
+		markdown: true
+	-
+		id: h1-alignment
+		title: H1 Alignment
+		type: variable-select
+		allowEmpty: false
+		default: left
+		options:
+			-
+				label: Left
+				value: left
+			-
+				label: Center
+				value: center
+			-
+				label: Right
+				value: right
+			-
+				label: Justify
+				value: justiry
+	-
+		id: h1-format
+		title: H1 Format
+		type: class-select
+		allowEmpty: false
+		default: h1-default
+		options:
+			-
+				label: Default
+				value: h1-default
+			-
+				label: Background
+				value: h1-background
+			-
+				label: Pill
+				value: h1-pill
+	-
+		id: h1-background
+		title: H1 Background
+		type: heading
+		level: 4
+	-
+		id: h1-background-color
+		title: H1 Background Color
+		description: This automatically defaults to the font color but transparent if sets to none
+		type: variable-themed-color
+		format: hex
+		opacity: true
+		default-light: "#"
+		default-dark: "#"
+		alt-format:
+			-
+				id: h1-background-color-rgb
+				format: rgb-values
+	-
+		id: h1-background-radius
+		title: H1 Background Radius
+		type: variable-text
+		default: 0.25em
+	-
+		id: h1-pill
+		title: H1 Pill
+		type: heading
+		level: 4
+	-
+		id: h1-pill-color
+		title: H1 Pill Color
+		description: This automatically defaults to the color red if sets to none
+		type: variable-themed-color
+		format: hex
+		opacity: true
+		default-light: "#"
+		default-dark: "#"
+		alt-format:
+			-
+				id: h1-pill-color-rgb
+				format: rgb-values
+	-
+		id: h1-pill-width
+		title: H1 Pill Width
+		type: variable-text
+		default: 0.1rem
 	-
 		id: user-heading-2
 		title: Heading 2
@@ -272,80 +410,15 @@ settings:
 		collapsed: true
 */
 
-.theme-dark,
-.themed-color-wrapper > .theme-dark {
-	--power-pbg0: #1e1e1e;
-	--power-pbg1: #262626;
-	--power-sbg0: #121212;
-	--power-sbg1: #1e1e1e;
-	--power-t0: #e8e8e8;
-	--power-t1: #a4a4a4;
-	--power-t2: #8a8a8a;
-	/* Copy what's in the catppuccin section */
+body {
+	--line-height-normal: 2.1;
 }
 
-.theme-dark.power-catppuccin,
-.power-catppuccin .themed-color-wrapper > .theme-dark {
-	--power-pbg0: #1e1e2e;
-	--power-pbg1: #181825;
-	--power-sbg0: #11111b;
-	--power-sbg1: #181825;
-	--power-t0: #cdd6f4;
-	--power-t1: #bac2de;
-	--power-t2: #a6adc8;
-	--power-red: #f38ba8;
-	--power-orange: #fab387;
-	--power-yellow: #f9e2af;
-	--power-green: #a6e3a1;
-	--power-cyan: #94e2d5;
-	--power-blue: #89b4fa;
-	--power-purple: #cba6f7;
-	--power-pink: #f5c2e7;
-}
-
-.theme-light {
-	--text-on-accent: var(--power-sbg0);
-	--text-on-accent-inverted: var(--power-t0);
-}
-
-.theme-dark {
-	--text-on-accent: var(--power-t0);
-	--text-on-accent-inverted: var(--power-sbg0);
-}
-
-.theme-light,
 .theme-dark {
 	--divider-color: #0000;
-	--background-primary: var(--user-background-primary, var(--power-pbg0));
-	--background-primary-alt: var(
-		--user-background-primary-alt,
-		var(--power-pbg1)
-	);
-	--background-secondary: var(--user-background-secondary, var(--power-sbg0));
-	--background-secondary-alt: var(
-		--user-background-secondary-alt,
-		var(--power-sbg1)
-	);
 	--background-modifier-border: #313244;
-	--background-modifier-hover: color-mix(
-		in srgb,
-		var(--power-t0) 7.5%,
-		transparent
-	);
-	--background-modifier-form-field: var(--power-osbg);
-	--text-normal: var(--power-t0);
-	--text-muted: var(--power-t1);
-	--text-faint: var(--power-t2);
 	--interactive-normal: #181825;
 	--interactive-hover: #1e1e2e;
-	--color-red: var(--power-red);
-	--color-orange: var(--power-orange);
-	--color-yellow: var(--power-yellow);
-	--color-green: var(--power-green);
-	--color-cyan: var(--power-cyan);
-	--color-blue: var(--power-blue);
-	--color-purple: var(--power-purple);
-	--color-pink: var(--power-pink);
 	--bold-weight: 600;
 	--h1-color: var(--color-red);
 	--h1-size: 2em;
@@ -371,14 +444,11 @@ settings:
 	--callout-radius: 16px;
 	--callout-title-padding: 1em 0 1em 1em;
 	--callout-content-padding: 0 0 1em 1em;
-	--canvas-color-1: var(--color-red);
-	--canvas-color-2: var(--color-orange);
-	--canvas-color-3: var(--color-yellow);
-	--canvas-color-4: var(--color-green);
-	--canvas-color-5: var(--color-blue);
-	--canvas-color-6: var(--color-purple);
 	--link-color: var(--text-normal);
 	--link-color-hover: var(--text-normal);
+	--tag-weight: 600;
+	--tag-padding-x: 0.65em;
+	--tag-padding-y: 0;
 }
 
 /* Callout */
@@ -403,41 +473,9 @@ settings:
 
 /* Canvas */
 
-body.theme-dark {
-	--canvas-color: #a6adc8;
-}
-
 button:not(.clickable-icon) {
 	box-shadow: 0 0 0 2px var(--background-primary-alt);
 }
-
-.canvas-color-picker-item {
-	background-color: var(--canvas-color);
-	&.is-active {
-		box-shadow: 0 0 0 2px var(--canvas-color);
-	}
-}
-
-.canvas-node-placeholder::after {
-	background-color: color-mix(in srgb, var(--canvas-color) 10%, transparent);
-}
-
-.canvas-icon-placeholder svg {
-	color: var(--canvas-color);
-}
-
-.canvas-node.is-themed .canvas-node-content {
-	background-color: color-mix(in srgb, var(--canvas-color) 7%, transparent);
-}
-
-.canvas-node-group .canvas-node-content {
-	background-color: color-mix(in srgb, var(--canvas-color) 7%, transparent);
-}
-
-.canvas-group-label {
-	background-color: color-mix(in srgb, var(--canvas-color) 10%, transparent);
-}
-
 .canvas-group-label[contenteditable="true"] {
 	box-shadow: 0 0 0 2px var(--canvas-color);
 }
@@ -488,16 +526,13 @@ button:not(.clickable-icon) {
 	fill: var(--canvas-color);
 }
 
-.markdown-rendered {
-	text-align: justify;
-}
-
 img,
 .cards table.dataview tbody > tr > td img {
 	background-color: var(--background-primary) !important;
 }
 
-h1,
+/* Headings */
+
 h2,
 h3,
 h4,
@@ -508,38 +543,54 @@ h6 {
 }
 
 h1 {
-	background: color-mix(in srgb, var(--color-red) 20%, transparent);
+	text-align: var(--h1-alignment);
+
+	.h1-background & {
+		background: var(--h1-background-color, rgb(var(--h1-color-rgb), 20%));
+		border-radius: var(--h1-background-radius);
+	}
 }
 
-h2 {
-	background: color-mix(in srgb, var(--color-orange) 20%, transparent);
+.h2-background h2 {
+	background: rgb(var(--color-orange-rgb), 20%);
 }
 
-h3 {
-	background: color-mix(in srgb, var(--color-yellow) 20%, transparent);
+.h3-background h3 {
+	background: rgb(var(--color-yellow-rgb), 20%);
 }
 
-h4 {
-	background: color-mix(in srgb, var(--color-green) 20%, transparent);
+.h4-background h4 {
+	background: rgb(var(--color-green-rgb), 20%);
 }
 
-h5 {
-	background: color-mix(in srgb, var(--color-blue) 20%, transparent);
+.h5-background h5 {
+	background: rgb(var(--color-blue-rgb), 20%);
 }
 
-h6 {
-	background: color-mix(in srgb, var(--color-blue) 20%, transparent);
+.h6-background h6 {
+	background: rgb(var(--color-purple-rgb), 20%);
+}
+
+/* Range Slider */
+input[type="range"] {
+	width: 12rem;
+}
+
+/* Text Input */
+input[type="text"] {
+	width: 12rem;
 }
 
 /* Color Selector */
+/*
 .pickr .pcr-button {
-	width: 14em;
+	width: 12rem;
 	&::before {
 		background: var(--background-primary-alt);
 		box-shadow: unset;
-		content: "Undefined";
+		content: "Color Unset";
 		color: var(--text-normal);
-		font-family: var(--font-text);
+		font-family: var(--font-monospace);
 		font-weight: 800;
 		height: 1.6em;
 		padding-top: 6px;
@@ -548,6 +599,7 @@ h6 {
 		box-shadow: 0 0 0 2px var(--pcr-color);
 	}
 }
+*/
 
 /* Metadata */
 .metadata-property:not([data-property-key="tags"]) {
@@ -556,6 +608,7 @@ h6 {
 }
 
 .metadata-input-longtext {
+	line-clamp: unset;
 	-webkit-line-clamp: unset;
 	max-height: none;
 }
@@ -621,9 +674,30 @@ body {
 	padding-right: 0.45em;
 }
 
+table.dataview > tbody > tr > td {
+	text-align: center;
+}
+
+.cards
+	table.dataview.table-view-table
+	tbody
+	> tr
+	> td:not(:last-child):not(:first-child) {
+	border-bottom: none;
+}
+
+.cards table.dataview.table-view-table tbody > tr > td:first-child img {
+	padding-top: 16px;
+}
+
 /* Style Settings */
-.themed-color-wrapper > * {
+.theme-light {
+	--background-primary: var(--background-primary);
+}
+
+.themed-color-wrapper > div {
 	background: var(--background-primary);
+	padding: 10px;
 }
 
 .style-settings-container .setting-item-description > div {
@@ -644,4 +718,64 @@ body {
 	padding-left: 40px;
 	margin-left: -15px;
 	border-left: 1px solid var(--background-modifier-border);
+}
+
+.workspace-tabs:not(.mod-top) .workspace-tab-header-container,
+.workspace-tabs:not(.mod-top) .workspace-tab-header-container * {
+	box-shadow: none !important;
+	outline: none !important;
+}
+
+.workspace-tabs:not(.mod-top) .workspace-tab-header-container * {
+	background-color: transparent !important;
+}
+
+.workspace-tabs:not(.mod-top)
+	.workspace-tab-header-container
+	.workspace-tab-header-inner-icon,
+.workspace-tabs:not(.mod-top)
+	.workspace-tab-header.is-active
+	.workspace-tab-header-inner,
+.workspace-tabs:not(.mod-top)
+	.workspace-tab-header-container
+	.workspace-tab-header-inner::before {
+	opacity: 0;
+	transform: translateY(-10px);
+	transition:
+		opacity 200ms ease-in,
+		transform 200ms ease-in;
+}
+
+.workspace-tabs:not(.mod-top)
+	.workspace-tab-header-container:hover
+	.workspace-tab-header-inner-icon,
+.workspace-tabs:not(.mod-top)
+	.workspace-tab-header.is-active
+	.workspace-tab-header-inner,
+.workspace-tabs:not(.mod-top)
+	.workspace-tab-header-container:hover
+	.workspace-tab-header-inner::before {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+.workspace-tabs:not(.mod-top) .workspace-tab-header-container {
+	height: 10px;
+	transition: height 200ms ease-in;
+	position: relative;
+}
+
+.workspace-tabs:not(.mod-top) .workspace-tab-header-container:hover {
+	height: var(--header-height);
+	background-color: var(--background) !important;
+}
+
+.workspace-tabs:not(.mod-top) .workspace-tab-header-container::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	top: 100%;
+	position: absolute;
+	z-index: 1;
 }
