@@ -1,3 +1,7 @@
+/* To navigate in the Style Settings part, search:
+ * "user-" to find the main folders
+ */
+
 /* @settings
 name: Power
 id: user-power
@@ -111,7 +115,7 @@ settings:
 		default-dark: "#"
 		alt-format:
 			-
-				id: color-pin-rgb
+				id: color-pink-rgb
 				format: rgb-values
 	-
 		id: user-background
@@ -147,7 +151,7 @@ settings:
 	-
 		id: background-secondary-alt
 		title: On Secondary Background
-		description: The background color for objects with a background different from and on top of the primary background
+		description: The background color for objects with a background different from and on top of the secondary background
 		type: variable-themed-color
 		format: hex
 		opacity: true
@@ -200,20 +204,135 @@ settings:
 		default-light: "#"
 		default-dark: "#"
 	-
+		id: user-codeblock
+		title: Codeblocks
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: code-background
+		title: Background color
+		type: variable-themed-color
+		format: hex
+		opacity: true
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: code-normal
+		title: Text color
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: code-size
+		title: Font size
+		description: Accepts CSS length units
+		type: variable-text
+		default: ""
+	-
+		id: code-white-space
+		title: Code white space
+		type: variable-select
+		default: normal
+		options:
+			-
+				label: Collapsed whitepace, line wrapping and no newline
+				value: normal
+			-
+				label: Collapsed whitespace, no line wrapping and no newline
+				value: nowrap
+			-
+				label: Preserved whitespace, no line wrapping
+				value: pre
+			- 
+				label: Collapsed whitespace, line wrapping
+				value: pre-line
+			-
+				label: Preserved whitespace, line wrapping
+				value: pre-wrap
+	-
+		id: code-syntax-colors
+		title: Syntax Highlighting
+		type: heading
+		level: 3
+		collapsed: true
+	-
+		id: code-comment
+		title: Comments
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: code-function
+		title: Functions
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: code-important
+		title: Important
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: code-keyword
+		title: Keywords
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: code-operator
+		title: Operators
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: code-property
+		title: Properties
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: code-punctuation
+		title: Punctuations
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: code-string
+		title: Strings
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: code-tag
+		title: Tags
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
+		id: code-value
+		title: Values
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
 		id: user-headings
 		title: Headings
 		type: heading
 		level: 2
 		collapsed: true
-	-
-		id: user-headings-tip
-		title: Info
-		description: To be able to change the color of the heading, turn on "Custom Colors"
-		type: info-text
-	-	
-		id: user-headings-custom-color
-		title: Custom Colors
-		type: class-toggle
 	-
 		id: user-heading-1
 		title: Heading 1
@@ -223,18 +342,23 @@ settings:
 	-
 		id: h1-basic-settings-info
 		description: "Basic settings"
+		description.vi: "Cài đặt cơ bản"
 		type: info-text
 		markdown: true
 	-
 		id: h1-font
 		title: H1 Font
-		description: Font(s) to use that is on your system
+		title.vi: Phông chữ
+		description: Font(s) to use which is on your system
+		description.vi: (Những) phông chữ có trên máy để sử dụng
 		type: variable-text
 		default: ""
 	-
 		id: h1-size
 		title: H1 Size
-		description: Accepts CSS font-size value
+		title.vi: Kích thước phông
+		description: Accepts CSS length units
+		description.vi: Nhận các đơn vị độ dài của CSS
 		type: variable-text
 		default: 1.5em
 	-
@@ -331,10 +455,18 @@ settings:
 		title: H1 Background
 		type: heading
 		level: 4
+		collapsed: true
+	-
+		id: h1-background-info
+		description: |-
+			Any text input in here can accept up to 4 values that is separated by spaces
+			Check [this](https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties#tricky_edge_cases) out to see how CSS properties deal with multiple values
+		type: info-text
+		markdown: true
 	-
 		id: h1-background-color
 		title: H1 Background Color
-		description: This automatically defaults to the font color but transparent if sets to none
+		description: This automatically defaults to transparent if reset
 		type: variable-themed-color
 		format: hex
 		opacity: true
@@ -345,8 +477,33 @@ settings:
 				id: h1-background-color-rgb
 				format: rgb-values
 	-
-		id: h1-background-radius
-		title: H1 Background Radius
+		id: h1-background-border-color
+		title: H1 Background Border Color
+		description: This automatically defaults to transparent if reset
+		type: variable-themed-color
+		format: hex
+		opacity: true
+		default-light: "#"
+		default-dark: "#"
+		alt-format:
+			-
+				id: h1-background-border-color-rgb
+				format: rgb-values
+	-
+		id: h1-background-border-style
+		title: H1 Background Border Style
+		description: Accepts any CSS border-style values
+		type: variable-text
+		default: ""
+	-
+		id: h1-background-border-width
+		title: H1 Background Border Width
+		description: Accepts CSS length units as well as "thin", "medium", and "thick"
+		type: variable-text
+		default: ""
+	-
+		id: h1-background-border-radius
+		title: H1 Background Border Radius
 		type: variable-text
 		default: 0.25em
 	-
@@ -354,6 +511,7 @@ settings:
 		title: H1 Pill
 		type: heading
 		level: 4
+		collapsed: true
 	-
 		id: h1-pill-color
 		title: H1 Pill Color
@@ -403,6 +561,25 @@ settings:
 		level: 3
 		collapsed: true
 	-
+		id: user-tag
+		title: Tags
+		type: heading
+		level: 2
+		collapsed: true
+	-
+		id: tag-normal-settings-info
+		description: "Normal settings"
+		description.vi: "Cài đặt bình thường"
+		type: info-text
+		markdown: true
+	-
+		id: tag-color
+		title: Text color
+		type: variable-themed-color
+		format: hex
+		default-light: "#"
+		default-dark: "#"
+	-
 		id: user-text
 		title: Text
 		type: heading
@@ -415,7 +592,7 @@ body {
 }
 
 .theme-dark {
-	--divider-color: #0000;
+	--divider-width: 2px;
 	--background-modifier-border: #313244;
 	--interactive-normal: #181825;
 	--interactive-hover: #1e1e2e;
@@ -441,14 +618,23 @@ body {
 	--callout-border-width: 2px;
 	--callout-border-opacity: 0.8;
 	--callout-padding: 0;
-	--callout-radius: 16px;
+	--callout-radius: 2px;
 	--callout-title-padding: 1em 0 1em 1em;
 	--callout-content-padding: 0 0 1em 1em;
-	--link-color: var(--text-normal);
-	--link-color-hover: var(--text-normal);
+	--link-color: var(--color-blue);
+	--link-color-hover: var(--color-blue);
 	--tag-weight: 600;
 	--tag-padding-x: 0.65em;
 	--tag-padding-y: 0;
+	--bold-color: var(--color-red);
+	--deleted-color: var(--text-faint);
+	--blockquote-background-color: var(--background-primary-alt);
+	--blockquote-border-thickness: 4px;
+	--blockquote-border-color: var(--background-modifier-border);
+}
+
+del {
+	color: var(--deleted-color);
 }
 
 /* Callout */
@@ -468,7 +654,8 @@ body {
 }
 
 .callout-content {
-	margin-right: 16px;
+	margin-right: 1em;
+	text-align: justify;
 }
 
 /* Canvas */
@@ -476,7 +663,12 @@ body {
 button:not(.clickable-icon) {
 	box-shadow: 0 0 0 2px var(--background-primary-alt);
 }
-.canvas-group-label[contenteditable="true"] {
+
+.canvas-node-group.is-themed .canvas-group-label:not([contenteditable="true"]) {
+	font-weight: 800;
+}
+
+/* .canvas-group-label[contenteditable="true"] {
 	box-shadow: 0 0 0 2px var(--canvas-color);
 }
 
@@ -524,7 +716,7 @@ button:not(.clickable-icon) {
 .canvas-edges polygon.canvas-path-end {
 	stroke: var(--canvas-color);
 	fill: var(--canvas-color);
-}
+} */
 
 img,
 .cards table.dataview tbody > tr > td img {
@@ -545,9 +737,18 @@ h6 {
 h1 {
 	text-align: var(--h1-alignment);
 
+	.el-h1:has(&) + .el-hr > hr {
+		--hr-thickness: 4px;
+		border-color: var(--h1-color);
+		margin: -0.75em 0 0;
+	}
+
 	.h1-background & {
 		background: var(--h1-background-color, rgb(var(--h1-color-rgb), 20%));
-		border-radius: var(--h1-background-radius);
+		border-color: var(--h1-background-border-color);
+		border-width: var(--h1-background-border-width);
+		border-style: var(--h1-background-border-style);
+		border-radius: var(--h1-background-border-radius);
 	}
 }
 
@@ -572,12 +773,12 @@ h1 {
 }
 
 /* Range Slider */
-input[type="range"] {
+.style-settings-container input[type="range"] {
 	width: 12rem;
 }
 
 /* Text Input */
-input[type="text"] {
+.style-settings-container input[type="text"] {
 	width: 12rem;
 }
 
@@ -700,9 +901,9 @@ table.dataview > tbody > tr > td {
 	padding: 10px;
 }
 
-.style-settings-container .setting-item-description > div {
+/* .style-settings-container .setting-item-description > div {
 	display: none;
-}
+} */
 
 .style-settings-container > *,
 .style-settings-heading > * {
@@ -778,4 +979,47 @@ table.dataview > tbody > tr > td {
 	top: 100%;
 	position: absolute;
 	z-index: 1;
+}
+
+/* Working on */
+/* body .markdowwn-preview-view .heading-collapse-indicator,
+body .is-live-preview .HyperMD-header .collapse-indicator.collapse-icon {
+	transform: translateX(-8px);
+}
+
+.markdown-rendered > :is(h1, h2, h3, h4, h5, h6),
+.markdown-preview-sizer > div > :is(h1, h2, h3, h4, h5, h6) {
+	text-indent: 9px;
+}
+
+body .is-live-preview .HyperMD-header-1::before {
+	margin-right: 6px;
+	content: " ";
+	display: inline-block;
+	width: 3px;
+	height: calc(1.2em - 8px);
+	border-radius: var(--radius-m);
+	background-color: var(--h1-color);
+	transform: translateY(4px);
+}
+
+body .markdown-rendered > h1::before,
+body .markdown-preview-sizer > div > h1::before {
+	margin-right: 6px;
+	content: " ";
+	display: inline-block;
+	width: 4px;
+	height: 0.85em;
+	border-radius: var(--radius-m);
+	background-color: var(--h1-color);
+	position: relative;
+	vertical-align: -7%;
+} */
+
+.markdown-rendered table {
+	width: 100%;
+}
+
+.footnotes > ol {
+	columns: 2;
 }
